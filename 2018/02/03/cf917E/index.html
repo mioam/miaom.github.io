@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            cf917E. Upside Down | 
+        
+        miaom&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="一只萌新">
+    <meta name="keywords" content=",codeforces,后缀自动机,树分治,线段树,离线,AC自动机,后缀树">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?uINFx4Z97fpCS0mFdXe6aQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?PFOObVP6ZXCgXKic75/uJA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+        
+            <link rel="stylesheet" href="/css/fontawesome.min.css">
+        
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #9999ff;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0caefe !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0caefe !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0caefe !important;
+  }
+
+  .toTop {
+    background: #9999ff !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #9999ff;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #9999ff;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #9999ff;
+  }
+
+  .post-toc a:hover {
+    color: #9999ff;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #66ccff70;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?ezyEvm8ST5CGfpA+kFFi1g==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="miaom&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://mioam.github.io/2018/02/03/cf917E/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="miaom&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://mioam.github.io/2018/02/03/cf917E/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="cf917E. Upside Down | miaom&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="一只萌新">
+    <meta property="og:article:tag" content="codeforces"> <meta property="og:article:tag" content="后缀自动机"> <meta property="og:article:tag" content="树分治"> <meta property="og:article:tag" content="线段树"> <meta property="og:article:tag" content="离线"> <meta property="og:article:tag" content="AC自动机"> <meta property="og:article:tag" content="后缀树"> 
+
+    
+        <meta property="article:published_time" content="Sat Feb 03 2018 10:19:54 GMT+0800">
+        <meta property="article:modified_time" content="Sat Feb 24 2018 08:44:38 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://mioam.github.io/2018/02/03/cf917E/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://mioam.github.io/2018/02/03/cf917E/index.html",
+    "headline": "cf917E. Upside Down",
+    "datePublished": "Sat Feb 03 2018 10:19:54 GMT+0800",
+    "dateModified": "Sat Feb 24 2018 08:44:38 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "miaom",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "lych真的0"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "miaom&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",codeforces,后缀自动机,树分治,线段树,离线,AC自动机,后缀树",
+    "description": "一只萌新",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Isolation" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+                    <!-- Isolation Header -->
+                    <header class="header">
+    <div class="header-wrapper">
+        <!-- Header Copyright -->
+        <div class="header-copyright">
+            <div class="header-site">
+                ©&nbsp;
+                <script type="text/javascript">
+                    var fd = new Date();
+                    document.write(fd.getFullYear());
+                </script>
+                &nbsp;miaom's Blog
+            </div>
+            <!--
+            I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+            It will not impact the appearance and can give developers a lot of support :)
+
+            很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+            它不会影响美观并可以给开发者很大的支持。 :)
+            -->
+            <div>
+                Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a>
+                <br>
+                Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a>
+            </div>
+        </div>
+
+        <!-- Header Title -->
+        <span class="header-title header-item">
+            <a href="/" title="miaom&#39;s Blog">
+                miaom&#39;s Blog
+            </a>
+        </span>
+
+        <p class="header-slogan header-item">
+        
+            
+                lych真的0
+            
+        
+        </p>
+
+        <!-- Header Nav -->
+        <nav class="header-nav header-item">
+            <span class="header-nav-item">
+                <a href="/" title="Home">
+                    <span>主页</span>
+                </a>
+            </span>
+
+            <!-- Pages  -->
+            
+                <span class="header-nav-item">
+                    <a href="/tags" title="标签">
+                        <span>标签</span>
+                    </a>
+                </span>
+            
+                <span class="header-nav-item">
+                    <a href="/links" title="友链">
+                        <span>友链</span>
+                    </a>
+                </span>
+            
+                <span class="header-nav-item">
+                    <a href="/about" title="关于我">
+                        <span>关于我</span>
+                    </a>
+                </span>
+            
+            
+        </nav>
+
+        <!-- Header SNS -->
+        <div class="header-item header-sns_list">
+<!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/mioam" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+        <a href="https://www.zhihu.com/people/mou-zhuo-chen/activities" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-zhihu">
+            </button><!--
+     --></a>
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/177236467/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+	
+</div>
+
+    </div>
+</header>
+
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+
+                    <!-- Post TOC -->
+
+    
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+
+
+    <!-- Isolation Post Header -->
+    <!-- Post thumbnail -->
+    
+        <!-- Post Header Info -->
+        <div class="post-header_info without-thumbnail">
+            <!-- Author Avatar & Name -->
+            <img src="/img/avatar.png" class="avatar-img" width="44px" height="44px" alt="miaom's avatar">
+            <span class="name-span">miaom</span>
+        </div>
+
+        <!-- Null Thumbnail -->
+        <div class="post_thumbnail-null">
+    
+        </div>
+
+
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+
+    
+        <div class="post-content_wrapper">
+            <p class="post-title">
+                cf917E. Upside Down
+            </p>
+            <h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><blockquote>
+<p>给你$n$个节点的树，边上有字母。再给你$m$个字符串$S_i$。$q$次询问$x$到$y$的路经上的字母形成的字符串中，都多少个子串等于$S_z$。</p>
+<p> $n,m,q,\sum|S_i|\le 100000$</p>
+</blockquote>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>真的相当毒瘤的一道题。。不知道比赛里怎么A。。</p>
+<p>首先容易想着点分治，接下来呢问题变成过重心有不过重心的两个部分，分别考虑解决。</p>
+<h4 id="方法1：分块（根本过不了）"><a href="#方法1：分块（根本过不了）" class="headerlink" title="方法1：分块（根本过不了）"></a>方法1：分块（根本过不了）</h4><p>我有一个分块的梦想！</p>
+<p>先考虑不过重心的，由于不同的长度只有$\sqrt{\sum|S_i|}$种，对同样的长度在dfs时维护每个点到重心路径上该长度的字符串的hash值，并装到一个hash表里。询问时相当于询问某个点到根路径上某个hash值出现了几次，复杂度可能是$O(n\sqrt{n})$。</p>
+<p>再考虑过重心的，发现完全不知道怎么搞，然后直接暴力判复杂度$O(\sum|S_{z_i}|)=O(n\max{|S_i|})$。</p>
+<h4 id="方法2：AC自动机-后缀自动机"><a href="#方法2：AC自动机-后缀自动机" class="headerlink" title="方法2：AC自动机+后缀自动机"></a>方法2：AC自动机+后缀自动机</h4><p>既然分块行不通，就来点正常的字符串算法吧！</p>
+<p>对于不过重心的，考虑建立$S_i$的AC自动机，每次dfs时在AC自动机上跑并对fail树上该点$+1$。询问时就是fail树上子树和。反串同理。</p>
+<p>对于过重心的，会被重心分成一个前缀和一个后缀。考虑后缀树，相当于前缀在反串后缀树上某个点到根路经上，且后缀在后缀树上某个点到根路径上。这个点就是dfs时端点到重心构成的字符串自啊后缀树上的对应节点。</p>
+<p>这部分可以离线处理，对每个$S_i$，考虑所有可能的前缀与后缀的组合对答案的贡献，相当于二维平面上区间加单点询问，使用线段树就能完成。</p>
+<p>复杂度$O(n\log^2{n})$。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre><code>#include&lt;bits/stdc++.h&gt;
+#define N 200005
+using namespace std;
+int n,m,q,len[N];char s[N];
+int Nxt[N],Fst[N],Ans[N];//query
+int used[N*2],to[N*2],nxt[N*2],str[N*2],fst[N],l=1;//edge
+struct T
+{
+    int x,y,p;
+}Q[N],Q0[N];//query
+int sz[N],Mx[N],blg[N];
+struct ACatm
+{
+    int c[N][26],fail[N],cnt,id[N];
+    int s[N][26],st[N],ed[N],ly;
+    int q[N];
+    vector&lt;int&gt;v[N];
+    void clr()
+    {
+        cnt=1;
+    }
+    void add(char s[],int len,int k)
+    {
+        int now=1;
+        for (int i=0;i&lt;len;i++)
+        {
+            if (!c[now][s[i]-&#39;a&#39;]) c[now][s[i]-&#39;a&#39;]=++cnt;
+            now=c[now][s[i]-&#39;a&#39;];
+        }
+        id[k]=now;
+        /**/
+    }
+    void dfs(int x)
+    {
+        st[x]=++ly;
+        for (int i=0;i&lt;v[x].size();i++)
+            dfs(v[x][i]);
+        ed[x]=ly;
+    }
+    void build()
+    {
+        for (int i=0;i&lt;26;i++)
+            c[0][i]=1;
+        int l=0,r=1;
+        q[1]=1;//fail[1]=0;
+        while(l&lt;r)
+        {
+            int x=q[++l];
+            for (int i=0;i&lt;26;i++)
+                if (c[x][i])
+                {
+                    q[++r]=c[x][i];
+                    fail[c[x][i]]=c[fail[x]][i];
+                }
+                else c[x][i]=c[fail[x]][i];
+        }
+        for (int i=2;i&lt;=cnt;i++)
+            v[fail[i]].push_back(i);
+        dfs(1);
+/*
+        puts(&quot;=====&quot;);
+        for (int i=1;i&lt;=cnt;i++)
+        {
+
+            printf(&quot;%d----%d  %d-%d\n&quot;,i,fail[i],st[i],ed[i]);
+        }
+*/
+    }
+
+    int val[N*4];
+    void add(int k,int l,int r,int x,int y)
+    {
+        val[k]+=y;
+        if (l==r) return;
+        int mid=l+r&gt;&gt;1;
+        if (x&lt;=mid) add(k&lt;&lt;1,l,mid,x,y);
+        else add(k&lt;&lt;1|1,mid+1,r,x,y);
+    }
+    int qry(int k,int l,int r,int x,int y)
+    {
+        if (x&lt;=l&amp;&amp;r&lt;=y) return val[k];
+        int mid=l+r&gt;&gt;1,ans=0;
+        if (x&lt;=mid) ans+=qry(k&lt;&lt;1,l,mid,x,y);
+        if (y&gt;mid) ans+=qry(k&lt;&lt;1|1,mid+1,r,x,y);
+        return ans;
+    }
+    void add(int x,int y)
+    {
+        //x+=y
+        //cerr&lt;&lt;st[x]&lt;&lt;&quot;***&quot;&lt;&lt;y&lt;&lt;endl;
+        add(1,1,cnt,st[x],y);
+    }
+    int qry(int x)
+    {
+        x=id[x];
+        //cerr&lt;&lt;x&lt;&lt;endl;
+        //cerr&lt;&lt;st[x]&lt;&lt;&#39; &#39;&lt;&lt;ed[x]&lt;&lt;endl;
+        return qry(1,1,cnt,st[x],ed[x]);
+    }
+}A1,A2;
+struct S
+{
+    int x,y,flag;
+}newS=(S){1,0,0};
+struct SAM
+{
+    int F[N*2],st[N*2],c[N*2][26],cnt;
+    int pos[N*2],str[N],ly,s[N*2][26];
+    vector&lt;int&gt;v[N];
+    int stt[N*2],ed[N*2],hz;
+    void clr()
+    {
+        cnt=1;
+    }
+    int add(int p,int x,int y)
+    {
+        int q,np,nq;
+        if (c[p][x]&amp;&amp;st[c[p][x]]==st[p]+1)
+            return c[p][x];
+        st[np=++cnt]=st[p]+1;pos[np]=y;
+        while(p&amp;&amp;!c[p][x]) c[p][x]=np,p=F[p];
+        if (!p) F[np]=1;
+        else if (st[p]+1==st[q=c[p][x]]) F[np]=q;
+        else
+        {
+            if (st[np]==st[p]+1)
+            {
+                nq=np;st[nq]=st[p]+1;
+                for (int i=0;i&lt;26;i++) c[nq][i]=c[q][i];
+                F[nq]=F[q];F[q]=nq;
+                while(p&amp;&amp;c[p][x]==q) c[p][x]=nq,p=F[p];
+            }
+            else
+            {
+                st[nq=++cnt]=st[p]+1;pos[nq]=pos[q];
+                for (int i=0;i&lt;26;i++) c[nq][i]=c[q][i];
+                F[nq]=F[q];F[q]=F[np]=nq;
+                while(p&amp;&amp;c[p][x]==q) c[p][x]=nq,p=F[p];
+            }
+        }
+        return np;
+    }
+    void add(char s[],int len,int k)
+    {
+        int now=1;
+        for (int i=0;i&lt;len;i++)
+        {
+            str[++ly]=s[i]-&#39;a&#39;;
+            now=add(now,s[i]-&#39;a&#39;,ly);
+        }/*
+        puts(&quot;-------&quot;);
+        for (int i=1;i&lt;=cnt;i++)
+            printf(&quot;%d  %d %d %d %d\n&quot;,i,F[i],st[i],c[i][0],c[i][1]);*/
+    }
+    void dfs(int x)
+    {
+        //cerr&lt;&lt;x&lt;&lt;endl;
+        stt[x]=++hz;
+        for (int i=0;i&lt;v[x].size();i++)
+            dfs(v[x][i]);
+        ed[x]=hz;
+    }
+    void build()
+    {
+        /*suffix tree*/
+        for (int i=2;i&lt;=cnt;i++)
+        {
+            //cerr&lt;&lt;i&lt;&lt;&#39; &#39;&lt;&lt;F[i]&lt;&lt;&#39; &#39;&lt;&lt;str[pos[i]-st[i]+1]&lt;&lt;endl;
+            pos[i]=pos[i]-st[F[i]];
+            s[F[i]][str[pos[i]]]=i;
+            v[F[i]].push_back(i);
+        }
+        dfs(1);
+/*
+        puts(&quot;=============&quot;);
+        for (int i=1;i&lt;=ly;i++)
+            putchar(str[i]+&#39;a&#39;);
+        puts(&quot;&quot;);
+        for (int i=1;i&lt;=cnt;i++)
+        {
+            printf(&quot;%d    %d %d %c\n&quot;,i,F[i],st[i],str[pos[i]]+&#39;a&#39;);
+        }
+*/
+    }
+    S Get(S x,int y)
+    {
+        if (x.flag==1) return x;
+        if (x.y==0)
+        {
+            //cerr&lt;&lt;s[x.x][y]&lt;&lt;endl;
+            if (!s[x.x][y]) x.flag=1;
+            else x.x=s[x.x][y],x.y=st[x.x]-st[F[x.x]]-1;
+        }
+        else
+        {
+            if (str[pos[x.x]-(st[x.x]-st[F[x.x]])+x.y]!=y) x.flag=1;
+            else x.y--;
+        }
+        return x;
+    }
+}S1,S2;
+void link(int x,int y,int z)
+{
+    to[++l]=y;nxt[l]=fst[x];fst[x]=l;str[l]=z;
+    to[++l]=x;nxt[l]=fst[y];fst[y]=l;str[l]=z;
+}
+void Dfs(int x,int f)
+{
+    sz[x]=1;Mx[x]=0;
+    for (int i=fst[x];i;i=nxt[i])
+    if (!used[i]&amp;&amp;to[i]!=f)
+    {
+        Dfs(to[i],x);
+        sz[x]+=sz[to[i]];
+        Mx[x]=max(Mx[x],sz[to[i]]);
+    }
+}
+void GetG(int x,int f,int &amp;G,int size)
+{
+    if (max(Mx[x],size-sz[x])&lt;max(Mx[G],size-sz[G])) G=x;
+    for (int i=fst[x];i;i=nxt[i])
+        if (!used[i]&amp;&amp;to[i]!=f) GetG(to[i],x,G,size);
+}
+void dfs(int x,int f,int y)
+{
+    blg[x]=y;
+    for (int i=fst[x];i;i=nxt[i])
+        if (!used[i]&amp;&amp;to[i]!=f)
+            dfs(to[i],x,y);
+}
+int FST[N],NXT[N*2];//qry on ACatm
+void work(int x,int n1,int n2,S m1,S m2,int f)
+{
+    //cerr&lt;&lt;x&lt;&lt;endl;
+    //cerr&lt;&lt;x&lt;&lt;&#39; &#39;&lt;&lt;n1&lt;&lt;&#39; &#39;&lt;&lt;n2&lt;&lt;endl;
+    A1.add(n1,1);
+    A2.add(n2,1);
+
+    for (int i=FST[x];i;i=NXT[i])
+    {
+        //cerr&lt;&lt;i&lt;&lt;endl;
+        if (i&amp;1)
+        {
+            Ans[i/2]+=A1.qry(Q[i/2].p);
+            Q0[i/2].y=m2.y?S2.F[m2.x]:m2.x;
+            //cout&lt;&lt;&quot;x: &quot;&lt;&lt;Q0[i/2].x&lt;&lt;&#39; &#39;&lt;&lt;m1.x&lt;&lt;&#39; &#39;&lt;&lt;m1.y&lt;&lt;endl;
+        }
+        else
+        {
+            Ans[i/2]+=A2.qry(Q[i/2].p);
+            Q0[i/2].x=m1.y?S1.F[m1.x]:m1.x;
+            //cout&lt;&lt;&quot;y: &quot;&lt;&lt;Q0[i/2].y&lt;&lt;endl;
+        }
+    }
+
+    for (int i=fst[x];i;i=nxt[i])
+    if (!used[i]&amp;&amp;to[i]!=f)
+    {
+        //cerr&lt;&lt;(char)(str[i]+&#39;a&#39;)&lt;&lt;endl;
+        work(to[i],A1.c[n1][str[i]],A2.c[n2][str[i]],S1.Get(m1,str[i]),S2.Get(m2,str[i]),x);
+    }
+
+    A1.add(n1,-1);
+    A2.add(n2,-1);
+}
+void clrFST(int x,int f)
+{
+    FST[x]=0;
+    for (int i=fst[x];i;i=nxt[i])
+        if (!used[i]&amp;&amp;to[i]!=f)
+            clrFST(to[i],x);
+}
+void solve(int x)
+{
+    int G=x;
+    Dfs(x,0);
+    GetG(x,0,G,sz[x]);
+    //cerr&lt;&lt;x&lt;&lt;&quot;   &quot;&lt;&lt;G&lt;&lt;endl;
+
+    for (int i=fst[G];i;i=nxt[i])
+    if (!used[i])
+        dfs(to[i],G,to[i]);
+    swap(Fst[G],Fst[x]);
+    for (int i=Fst[G],tmp;i;i=tmp)
+    {
+        //cerr&lt;&lt;&quot;ok &quot;&lt;&lt;i&lt;&lt;endl;
+        tmp=Nxt[i];
+        if (Q[i].x==G||Q[i].y==G)
+        {
+            //cerr&lt;&lt;&quot;Skipped: &quot;&lt;&lt;i&lt;&lt;endl;
+            if (Q[i].x!=G) NXT[i*2]=FST[Q[i].x],FST[Q[i].x]=i*2;//A2
+            if (Q[i].y!=G) NXT[i*2+1]=FST[Q[i].y],FST[Q[i].y]=i*2+1;//A1
+            continue;
+        }
+        //cerr&lt;&lt;blg[Q[i].x]&lt;&lt;&#39; &#39;&lt;&lt;blg[Q[i].y]&lt;&lt;endl;
+        if (blg[Q[i].x]==blg[Q[i].y])
+        {
+            //cerr&lt;&lt;blg[Q[i].x]&lt;&lt;endl;
+            Nxt[i]=Fst[blg[Q[i].x]];
+            Fst[blg[Q[i].x]]=i;
+        }
+        else
+        {
+            /*calc*/
+            //cerr&lt;&lt;G&lt;&lt;&quot;--&quot;&lt;&lt;i&lt;&lt;endl;
+            NXT[i*2]=FST[Q[i].x];FST[Q[i].x]=i*2;//A2
+            NXT[i*2+1]=FST[Q[i].y];FST[Q[i].y]=i*2+1;//A1
+
+            /**/
+        }
+    }
+    /*dfs*/
+    work(G,1,1,newS,newS,0);
+    /*clear FST*/
+    clrFST(G,0);
+    //return;
+
+    for (int i=fst[G];i;i=nxt[i])
+    if (!used[i])
+    {
+        used[i]=used[i^1]=1;
+        solve(to[i]);
+    }
+}
+struct Md
+{
+    int x,l,r,p;
+}md[N*2];
+bool operator&lt;(T a,T b){return a.x&lt;b.x;}
+bool operator&lt;(Md a,Md b){return a.x&lt;b.x;}
+vector&lt;T&gt;v[N];
+int val[N*8];
+void mdy(int k,int l,int r,int x,int y,int p)
+{
+    if (x&lt;=l&amp;&amp;r&lt;=y)
+    {
+        val[k]+=p;
+        return;
+    }
+    int mid=l+r&gt;&gt;1;
+    if (x&lt;=mid) mdy(k&lt;&lt;1,l,mid,x,y,p);
+    if (y&gt;mid) mdy(k&lt;&lt;1|1,mid+1,r,x,y,p);
+}
+int qry(int k,int l,int r,int x)
+{
+    if (l==r) return val[k];
+    int mid=l+r&gt;&gt;1;
+    if (x&lt;=mid) return val[k]+qry(k&lt;&lt;1,l,mid,x);
+    return val[k]+qry(k&lt;&lt;1|1,mid+1,r,x);
+}
+int main()
+{
+    scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;q);
+    for (int i=1;i&lt;n;i++)
+    {
+        int x,y;
+        scanf(&quot;%d%d%s&quot;,&amp;x,&amp;y,s);
+        link(x,y,s[0]-&#39;a&#39;);
+    }
+
+    int sta[N],ly=0,strr[N];
+    /**/
+    A1.clr();S1.clr();
+    A2.clr();S2.clr();
+
+    for (int i=1;i&lt;=m;i++)
+    {
+        scanf(&quot;%s&quot;,s);
+
+        len[i]=strlen(s);
+
+        sta[i]=ly+1;
+        for (int j=0;j&lt;len[i];j++)
+        strr[++ly]=s[j]-&#39;a&#39;;
+
+        /*add to SAM*/
+        S1.add(s,len[i],i);
+        /*add to ACatm*/
+        A1.add(s,len[i],i);
+
+        reverse(s,s+len[i]);
+        /*add to SAM*/
+        S2.add(s,len[i],i);
+        /*add to ACatm*/
+        A2.add(s,len[i],i);
+
+
+    }
+
+    A1.build();S1.build();
+    //return 0;
+    A2.build();S2.build();
+
+    for (int i=1;i&lt;=q;i++)
+    {
+        scanf(&quot;%d%d%d&quot;,&amp;Q[i].x,&amp;Q[i].y,&amp;Q[i].p);
+        Nxt[i]=i-1;
+    }
+    Fst[1]=q;
+
+    solve(1);
+/*
+    for (int i=1;i&lt;=q;i++)
+        printf(&quot;%d    %d %d\n&quot;,Ans[i],S1.stt[Q0[i].x],S2.stt[Q0[i].y]);
+*/
+    //puts(&quot;------------------&quot;);
+    /*calc on suffix tree*/
+    for (int i=1;i&lt;=q;i++)
+    {
+        //swap(Q0[i].x,Q0[i].y);
+        if (S1.stt[Q0[i].x]&amp;&amp;S2.stt[Q0[i].y])
+            v[Q[i].p].push_back((T){S1.stt[Q0[i].x],S2.stt[Q0[i].y],i});
+    }
+    int tmpx[N],tmpy[N];
+    for (int i=1;i&lt;=m;i++)
+    {
+        int m1=1,m2=1;
+        for (int j=0;j&lt;len[i];j++)
+        {
+            m1=S1.c[m1][strr[sta[i]+j]];
+            tmpx[j+1]=m1;
+        }
+        for (int j=len[i]-1;j&gt;=0;j--)
+        {
+            m2=S2.c[m2][strr[sta[i]+j]];
+            tmpy[j]=m2;
+        }
+        int ly=0;
+        //puts(&quot;ok&quot;);
+        md[++ly]=(Md){0,1,S2.cnt,0};
+        md[++ly]=(Md){S1.cnt+1,1,S2.cnt,0};
+        //cerr&lt;&lt;i&lt;&lt;endl;
+        for (int j=1;j&lt;len[i];j++)
+        {
+            md[++ly]=(Md){S1.stt[tmpx[j]],S2.stt[tmpy[j]],S2.ed[tmpy[j]],1};
+            md[++ly]=(Md){S1.ed[tmpx[j]]+1,S2.stt[tmpy[j]],S2.ed[tmpy[j]],-1};
+//        cerr&lt;&lt;i&lt;&lt;&quot;  ---  &quot;&lt;&lt;S1.stt[tmpx[j]]&lt;&lt;&#39; &#39;&lt;&lt;S1.ed[tmpx[j]]&lt;&lt;&#39; &#39;&lt;&lt;S2.stt[tmpy[j]]&lt;&lt;&#39; &#39;&lt;&lt;S2.ed[tmpy[j]]&lt;&lt;endl;
+        }
+        sort(md+1,md+ly+1);
+        sort(v[i].begin(),v[i].end());
+        for (int j=1,k=0;j&lt;=ly;)
+        {
+            int tmp=md[j].x;
+            while(k&lt;v[i].size()&amp;&amp;v[i][k].x&lt;tmp)
+                Ans[v[i][k].p]+=qry(1,1,S2.cnt,v[i][k].y),k++;
+            while(j&lt;=ly&amp;&amp;md[j].x==tmp)
+                mdy(1,1,S2.cnt,md[j].l,md[j].r,md[j].p),j++;
+        }
+    }
+    for (int i=1;i&lt;=q;i++)
+    {
+        printf(&quot;%d\n&quot;,Ans[i]);
+        //printf(&quot;%d    %d %d\n&quot;,Ans[i],S1.stt[Q0[i].x],S2.stt[Q0[i].y]);
+
+    }
+    //cerr&lt;&lt;&quot;QAQ: &quot;&lt;&lt;newS.x&lt;&lt;&#39; &#39;&lt;&lt;newS.y&lt;&lt;&#39; &#39;&lt;&lt;newS.flag&lt;&lt;endl;
+    //cerr&lt;&lt;S1.Get(newS,0).x;
+}
+</code></pre>
+            
+        </div>
+    
+</div>
+
+
+                
+                    <!-- Paradox Post Info -->
+                    
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/02/24/WC2018/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            下一篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/01/26/JOI2016scSandwich/" id="post_nav-older" class="next-content">
+            上一篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?wgjW/HuQG9JDgvPDPoRAng==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
+    
+
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+</body>
+    
+</html>
