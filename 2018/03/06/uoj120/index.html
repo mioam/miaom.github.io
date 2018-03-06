@@ -43,7 +43,7 @@
     
     <title>
         
-            uoj#120. 【UR | 
+            uoj#120. 【UR #8】宿命多项式 | 
         
         miaom&#39;s Blog
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="一只萌新">
-    <meta name="keywords" content=",搜索,uoj,数学">
+    <meta name="keywords" content=",搜索,数学">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -241,14 +241,14 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://mioam.github.io/2018/03/06/uoj120/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="uoj#120. 【UR | miaom&#39;s Blog">
+    <meta property="og:title" content="uoj#120. 【UR #8】宿命多项式 | miaom&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="一只萌新">
-    <meta property="og:article:tag" content="搜索"> <meta property="og:article:tag" content="uoj"> <meta property="og:article:tag" content="数学"> 
+    <meta property="og:article:tag" content="搜索"> <meta property="og:article:tag" content="数学"> 
 
     
         <meta property="article:published_time" content="Tue Mar 06 2018 15:35:28 GMT+0800">
-        <meta property="article:modified_time" content="Tue Mar 06 2018 18:48:26 GMT+0800">
+        <meta property="article:modified_time" content="Tue Mar 06 2018 19:07:01 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,9 +269,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://mioam.github.io/2018/03/06/uoj120/index.html",
-    "headline": "uoj#120. 【UR",
+    "headline": "uoj#120. 【UR #8】宿命多项式",
     "datePublished": "Tue Mar 06 2018 15:35:28 GMT+0800",
-    "dateModified": "Tue Mar 06 2018 18:48:26 GMT+0800",
+    "dateModified": "Tue Mar 06 2018 19:07:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "miaom",
@@ -289,7 +289,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",搜索,uoj,数学",
+    "keywords": ",搜索,数学",
     "description": "一只萌新",
 }
 </script>
@@ -497,7 +497,7 @@
     
         <div class="post-content_wrapper">
             <p class="post-title">
-                uoj#120. 【UR
+                uoj#120. 【UR #8】宿命多项式
             </p>
             <h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><blockquote>
 <p>$q$组数据，求有多少最高次不高于$n$的整系数多项式，对于任意$0\leq i \leq n$均满足$1\leq f(i) \leq c_i$。</p>
@@ -512,8 +512,9 @@
 <p>对于满足条件多项式$f(x)=\sum_{i=0}^nc_ix^i$使用下降幂表示为$f(x)=\sum_{i=0}^nq_ix^{\underline{i}}$。</p>
 <p>$c_i$均为整数等价于$q_i$均为整数。</p>
 <p>我们并不需要求出具体的$x^{\underline{i}}$。</p>
-<p>考虑$0\leq f(i)<c_i$，有$f(i)=q_ii^{\underline{i}}+q_{i-1}i^{\underline{i-1}}+\cdots+q_0i^{\underline{0}}$。对答案的贡献与$q_{i-1}i^{\underline{i-1}}+\cdots+q_0i^{\underline{0}}\ mod\="" \="" i^{\underline{i}}$有关。直接枚举$q_i$没有希望，观察发现对于$k<i$，有$(n-i)!\cdot="" i^{\underline{i}}\="" |\="" (n-k)!\cdot="" i^{\underline{k}}$。用$(n-i)!\cdot="" t_i+r_i$表示$q_i$，dfs枚举$r_i$，对于$i$，对答案的贡献即$t_i$的方案数为$\left\lfloor="" \frac{c_i}{i!\cdot(n-i)!}\right\rfloor+\left[c_i\="" (i!\cdot(n-i)!)=""> q_{i}i^{\underline{i}}+\cdots+q_0i^{\underline{0}} mod  (i!\cdot(n-i)!)\right]$</c_i$，有$f(i)=q_ii^{\underline{i}}+q_{i-1}i^{\underline{i-1}}+\cdots+q_0i^{\underline{0}}$。对答案的贡献与$q_{i-1}i^{\underline{i-1}}+\cdots+q_0i^{\underline{0}}\></p>
-<p>等价于$\left\lfloor \frac{c_i}{i!\cdot(n-i)!}\right\rfloor+\left[c_i mod  (i!\cdot(n-i)!) &gt; r_{i}i^{\underline{i}}+\cdots+r_0i^{\underline{0}} mod  (i!\cdot(n-i)!)\right]$，可以做到$O(n!\cdot (n-1)!\cdots1!\cdot n)$的复杂度。</p>
+<p>考虑$0\leq f(i)&lt;c_i$，有$f(i)=q_ii^{\underline{i}}+q_{i-1}i^{\underline{i-1}}+\cdots+q_0i^{\underline{0}}$。对答案的贡献与$q_{i-1}i^{\underline{i-1}}+\cdots+q_0i^{\underline{0}}\, mod\, \, i^{\underline{i}}$有关。直接枚举$q_i$没有希望，观察发现对于$k&lt;i$，有$(n-i)!\cdot i^{\underline{i}} | (n-k)!\cdot i^{\underline{k}}$。用$(n-i)!\cdot t_i+r_i$表示$q_i$，dfs枚举$r_i$，对于$i$，对答案的贡献即$t_i$的方案数为</p>
+<script type="math/tex; mode=display">\left\lfloor \frac{c_i}{i!\cdot(n-i)!}\right\rfloor+\left[c_i\ mod\ \ (i!\cdot(n-i)!) > q_{i}i^{\underline{i}}+\cdots+q_0i^{\underline{0}}\ mod\ \ (i!\cdot(n-i)!)\right]</script><p>等价于</p>
+<script type="math/tex; mode=display">\left\lfloor \frac{c_i}{i!\cdot(n-i)!}\right\rfloor+\left[c_i\ mod\ \ (i!\cdot(n-i)!) > r_{i}i^{\underline{i}}+\cdots+r_0i^{\underline{0}}\ mod\ \ (i!\cdot(n-i)!)\right]</script><p>可以做到$O(n!\cdot (n-1)!\cdots1!\cdot n)$的复杂度。</p>
 <p>考虑进一步优化，对于枚举$r_0$的部分，发现存在大量冗余，考虑对于答案相同的一起统计。对于$t_i$，有$2\binom{n}{i}$个$r_0$的关键点，共$2^{n+1}$个，使用计数排序的技巧，可以优化到$O((n-1)!\cdots 1! \cdot 2^{n+1})$。</p>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre><code>#include&lt;bits/stdc++.h&gt;
 #define ll long long
