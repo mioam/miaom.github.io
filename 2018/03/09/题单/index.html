@@ -43,7 +43,7 @@
     
     <title>
         
-            某奇怪的题单 | 
+            [置顶]某奇怪的题单 | 
         
         miaom&#39;s Blog
     </title>
@@ -241,14 +241,14 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://mioam.github.io/2018/03/09/题单/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="某奇怪的题单 | miaom&#39;s Blog">
+    <meta property="og:title" content="[置顶]某奇怪的题单 | miaom&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="一只萌新">
     
 
     
         <meta property="article:published_time" content="Fri Mar 09 2018 09:50:13 GMT+0800">
-        <meta property="article:modified_time" content="Tue Mar 13 2018 10:56:57 GMT+0800">
+        <meta property="article:modified_time" content="Wed Mar 14 2018 15:00:51 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -269,9 +269,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://mioam.github.io/2018/03/09/题单/index.html",
-    "headline": "某奇怪的题单",
+    "headline": "[置顶]某奇怪的题单",
     "datePublished": "Fri Mar 09 2018 09:50:13 GMT+0800",
-    "dateModified": "Tue Mar 13 2018 10:56:57 GMT+0800",
+    "dateModified": "Wed Mar 14 2018 15:00:51 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "miaom",
@@ -497,7 +497,7 @@
     
         <div class="post-content_wrapper">
             <p class="post-title">
-                某奇怪的题单
+                [置顶]某奇怪的题单
             </p>
             <p>记录一下近期开的题。。</p>
 <h3 id="3-9"><a href="#3-9" class="headerlink" title="3.9"></a>3.9</h3><p><a href="https://csacademy.com/contest/archive/task/divisible-matching/" target="_blank" rel="noopener">Divisible Matching</a></p>
@@ -541,7 +541,7 @@
 <p><a href="http://codeforces.com/problemset/problem/89/E" target="_blank" rel="noopener">E. Fire and Ice</a></p>
 <ul>
 <li>1～n上有火妖，每个的血量为$a_i$，你在0，每一步可以<code>A</code>在右边造一个冰或者消一个冰，或者<code>R</code>右移或者<code>L</code>左移，因重力掉落的冰会造成1点伤害，求打死所有火妖的最少步数的方案。$n\le 1000，a_i\le100$</li>
-<li>贪心？</li>
+<li>贪心。发现让右边一段长为x的掉下去，代价为3x+2，所以大概不会砸空。然后搞搞。</li>
 </ul>
 <p><a href="http://codeforces.com/problemset/problem/772/E" target="_blank" rel="noopener">E. Verifying Kingdom</a></p>
 <ul>
@@ -551,12 +551,12 @@
 <p><a href="http://codeforces.com/problemset/problem/730/K" target="_blank" rel="noopener">K. Roads Orientation Problem</a></p>
 <ul>
 <li>给一张无向图定向，使得没有入边的点为s，没有出边的点为t，且无环。$n\le400000$</li>
-<li>​</li>
+<li>这个题可以说是很神仙了。考虑以s为根建立dfs树，t~s的路径上的边都指向父亲。对于一条返祖边x-&gt;y，设y为祖先，x在y的z儿子的子树内，令x-&gt;y方向与z-&gt;y相同（指向根或不指向根），并使x到s的一段未定向的边定向与z-&gt;y不同。使用bfs实现。感性理解一下是对的。$O(n+m)$</li>
 </ul>
 <p><a href="http://codeforces.com/problemset/problem/762/F" target="_blank" rel="noopener">F. Tree nesting</a></p>
 <ul>
 <li>给两个树S,T，求S有几个子树（联通子图）与T同构。$|S|\le 1000，|T|\le 12$</li>
-<li>找到T的重心（或重心边），容斥吧</li>
+<li>找到T的重心（或重心边），然后子树dp，除去同构的方案。</li>
 </ul>
 
             
