@@ -45,7 +45,7 @@
     
     <title>
         
-            agc020E - Encoding Subsets | 
+            ZJOI2018Day1游记 | 
         
         miaom&#39;s Blog
     </title>
@@ -56,7 +56,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="一只萌新">
-    <meta name="keywords" content=",搜索">
+    <meta name="keywords" content=",游记">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -226,7 +226,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="miaom&#39;s Blog">
-    <meta name="msapplication-starturl" content="https://mioam.github.io/2018/01/17/agc020e/">
+    <meta name="msapplication-starturl" content="https://mioam.github.io/2018/03/22/ZJOI2018Day1游记/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="miaom&#39;s Blog">
@@ -241,16 +241,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://mioam.github.io/2018/01/17/agc020e/">
+    <meta property="og:url" content="https://mioam.github.io/2018/03/22/ZJOI2018Day1游记/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="agc020E - Encoding Subsets | miaom&#39;s Blog">
+    <meta property="og:title" content="ZJOI2018Day1游记 | miaom&#39;s Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="一只萌新">
-    <meta property="og:article:tag" content="搜索"> 
+    <meta property="og:article:tag" content="游记"> 
 
     
-        <meta property="article:published_time" content="Wed Jan 17 2018 15:01:16 GMT+0800">
-        <meta property="article:modified_time" content="Tue Mar 06 2018 19:08:08 GMT+0800">
+        <meta property="article:published_time" content="Thu Mar 22 2018 10:38:30 GMT+0800">
+        <meta property="article:modified_time" content="Thu Mar 22 2018 15:58:08 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -258,7 +258,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://mioam.github.io/2018/01/17/agc020e/index.html" />
+        <link rel="canonical" href="https://mioam.github.io/2018/03/22/ZJOI2018Day1游记/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -270,10 +270,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://mioam.github.io/2018/01/17/agc020e/index.html",
-    "headline": "agc020E - Encoding Subsets",
-    "datePublished": "Wed Jan 17 2018 15:01:16 GMT+0800",
-    "dateModified": "Tue Mar 06 2018 19:08:08 GMT+0800",
+    "mainEntityOfPage": "https://mioam.github.io/2018/03/22/ZJOI2018Day1游记/index.html",
+    "headline": "ZJOI2018Day1游记",
+    "datePublished": "Thu Mar 22 2018 10:38:30 GMT+0800",
+    "dateModified": "Thu Mar 22 2018 15:58:08 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "miaom",
@@ -291,7 +291,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",搜索",
+    "keywords": ",游记",
     "description": "一只萌新",
 }
 </script>
@@ -499,72 +499,55 @@
     
         <div class="post-content_wrapper">
             <p class="post-title">
-                agc020E - Encoding Subsets
+                ZJOI2018Day1游记
             </p>
-            <h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><blockquote>
-<p>一个01串，可以使用以下方法表示：</p>
-<ul>
-<li>$0$和$1$分别可用$0$和$1$表示</li>
-<li>如果$A$,$B$分别可用$P$,$Q$表示，则$A+B$可用$P+Q$表示。</li>
-<li>如果$A$可用$P$表示，则$\underbrace{AA…A}_{K个}$可用$(P*K)$表示</li>
-</ul>
-<p>现在问一个长为$S$的串$A$，所有的$B\in A$共有几种表示方式。</p>
-<p>$n\leq5000 ,\sum s_i\leq2*10^6$</p>
-</blockquote>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>考虑$f(x)$表示$x$这个串的答案，$g(x)$表示$x$这个串分成$(P*K)$的方案数。然后使用记忆化搜索发现可以过。<br>考虑复杂度上界都能够表示为$A$中某一段中的某一段重复若干次的交，大概为$O(玄学)$种不同的串，反正用dp算的复杂度是对的。</p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre><code>#include&lt;bits/stdc++.h&gt;
-#define P 998244353
-#define ll long long
-using namespace std;
-map&lt;vector&lt;int&gt;,int&gt;mp,pm;
-int Get(vector&lt;int&gt; S);
-int G(vector&lt;int&gt;S)
-{
-    int n=S.size();
-    if (n==1) return S[0]?2:1;
-    if (mp[S]) return mp[S];
-    int sum=0;
-    for (int i=2;i&lt;=n;i++)
-    if (n%i==0)
-    {
-        vector&lt;int&gt;tmp;tmp.clear();
-        for (int j=1;j&lt;=n/i;j++)
-            tmp.push_back(1);
-        for (int j=0;j&lt;n;j++)
-            tmp[j%(n/i)]&amp;=S[j];
-        //cout&lt;&lt;tmp[0]&lt;&lt;&#39; &#39;&lt;&lt;S[0]&lt;&lt;endl;
-        sum=(sum+Get(tmp))%P;
-    }
-//    cout&lt;&lt;&quot;#&quot;;for (int i:S)cout&lt;&lt;i&lt;&lt;&#39; &#39;;cout&lt;&lt;sum&lt;&lt;endl;
+            <p>这大概是我的最后一届ZJOI了吧。。</p>
+<hr>
+<h3 id="DAY0"><a href="#DAY0" class="headerlink" title="DAY0"></a>DAY0</h3><p>早上7:00从学校出发，路上听听音乐，<del>拍拍汪大的帅照</del>，大概就到了宾馆。</p>
+<p>这次宾馆超资磁，wifi飞快，还自带电脑。。<del>赶紧先po一把generals.io</del></p>
+<p>然后就去颁奖仪式了。晚上po炉石，无限火球真尼玛好玩。</p>
+<p><br></p>
+<h3 id="DAY1"><a href="#DAY1" class="headerlink" title="DAY1"></a>DAY1</h3><p>问梁大谁讲课，结果好像连自己的讲课时间都不知道。</p>
+<p>上午是rxd的杂(shen)题。</p>
+<p>下午的题好多都是cc的毒瘤多项式题，直接就掉线了。wzf2000好像都A过了？？</p>
+<p>还讲了WC的平面图课件，再次掉线。</p>
+<p>这次食堂很棒棒啊。晚上po炉石，无限火球真尼玛好玩。给汪大开了JJC。</p>
+<p><br></p>
+<h3 id="DAY2"><a href="#DAY2" class="headerlink" title="DAY2"></a>DAY2</h3><p>上午cf选讲，下午是梁大的JOI。</p>
+<p>可能因为是最后一节课，人都走完了。。</p>
+<p>晚上敲了个FFT板子，po了会炉石，就睡了。</p>
+<p>汪大JJC已经6-2了</p>
+<p><br></p>
+<h3 id="DAY3"><a href="#DAY3" class="headerlink" title="DAY3"></a>DAY3</h3><p>早上正常时间起床，下楼的时候被电梯卡了好久。</p>
+<p>到考场，坐了会就开考了。。</p>
+<p><br></p>
+<h5 id="8-00"><a href="#8-00" class="headerlink" title="8:00"></a>8:00</h5><p>先看题。</p>
+<p>T1数据范围$k=9$，感觉要推一会，先弃。</p>
+<p>T2要先找性质吧，YY了个$nm$暴力，感觉很棒。</p>
+<p>T3像是个自动机一样的东西，先弃。</p>
+<h5 id="8-30"><a href="#8-30" class="headerlink" title="8:30"></a>8:30</h5><p>回去敲T2的暴力，顺便YY了个类似LCT的做法，就是像树剖一样搞出重边，然后splay维护。因为每条轻边都会是子树和翻倍，所以大概有log权值和段，splay不知道能不能像LCT一样分析，粗略估计$O(nlog^3n)$。</p>
+<p>期望得分：0+30+0</p>
+<h5 id="10-30"><a href="#10-30" class="headerlink" title="10:30"></a>10:30</h5><p>大概写完了T2的算法，但是大样例输出了奇怪的答案，于是写了个对拍，拍一组错一组，心态崩了。。</p>
+<p>去了厕所，冷静了一下，感觉自己A掉T2或许还有救。</p>
+<p>期望得分：0+30+0</p>
+<h5 id="11-30"><a href="#11-30" class="headerlink" title="11:30"></a>11:30</h5><p>发现自己无数个细节写跪，最后是LCT的子树和忘记减左儿子的和了，MDZZ。。。</p>
+<p>直接和暴力拍上了，400000大概3s左右，感觉有希望。。</p>
+<p>期望得分：0+80+0</p>
+<h5 id="12-00"><a href="#12-00" class="headerlink" title="12:00"></a>12:00</h5><p>去看T1写了个10的暴力，然后看T3，猜了个<code>min(k/gcd+1,k)</code>，并没有抱太大的希望。</p>
+<p>期望得分：10+80+0</p>
+<p>woc居然有100分了，感觉自己萌萌哒，赶紧回去查T2的错。</p>
+<h5 id="12-30"><a href="#12-30" class="headerlink" title="12:30"></a>12:30</h5><p>查错完了，随机树还是要跑3s，和数据生成器、暴力五五开。</p>
+<p>回去看了T1发现还能暴力，赶紧码码码。</p>
+<p>期望得分：30+80+0</p>
+<h5 id="13-00"><a href="#13-00" class="headerlink" title="13:00"></a>13:00</h5><p>发现T3还有大样例，加强了一发找规律，还是过不了大样例。</p>
+<p>期望得分：30+80+0</p>
+<h5 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h5><p>我的T2可能是标算？我的复杂度可能算错了？？可能加个读入优化就能过？？？惨啊、、</p>
+<hr>
+<p>回去的路上汪大10-3出橙了。</p>
+<p>车子开到一半爆胎了，等了好久。后排的dalao好像在po农药，比较好奇为什么手机还有电。</p>
+<p><br></p>
+<p>听说我校两个标准分。。noip490好亏啊。。</p>
 
-    return mp[S]=sum;
-}
-int Get(vector&lt;int&gt; S)
-{
-    if (pm[S]) return pm[S];
-    int n=S.size(),sum=G(S);
-    vector&lt;int&gt;T;T.clear();
-    for (int i=1;i&lt;n;i++)
-    {
-        T.push_back(S[i-1]);
-        vector&lt;int&gt; tmp;tmp.clear();
-        for (int j=i;j&lt;n;j++)tmp.push_back(S[j]);
-
-        sum=(sum+(ll)G(T)*Get(tmp))%P;
-    }
-//    for (int i:S)cout&lt;&lt;i&lt;&lt;&#39; &#39;;cout&lt;&lt;sum&lt;&lt;endl;
-    return pm[S]=sum;
-}
-int main()
-{
-    int n;char s[1005];
-    scanf(&quot;%s&quot;,s+1);n=strlen(s+1);
-    vector&lt;int&gt;S;
-    for (int i=1;i&lt;=n;i++)
-        S.push_back(s[i]-&#39;0&#39;);
-    printf(&quot;%d\n&quot;,Get(S));
-}
-</code></pre>
             
         </div>
     
@@ -586,21 +569,13 @@ int main()
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/01/22/cf878E/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            下一篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/01/04/CSAColorgragh/" id="post_nav-older" class="next-content">
+        <a href="/2018/03/09/题单/" id="post_nav-older" class="next-content">
             上一篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

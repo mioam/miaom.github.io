@@ -22,6 +22,8 @@
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net"/>
+
 
 
 
@@ -454,7 +456,7 @@
 
 <div class=" material-tagscloud">
     <div class="material-post mdl-grid">
-        <a href="/tags/AC自动机/" style="font-size: 16px; color: #757575">AC自动机</a> <a href="/tags/LCT/" style="font-size: 16px; color: #757575">LCT</a> <a href="/tags/二分/" style="font-size: 16px; color: #757575">二分</a> <a href="/tags/分块/" style="font-size: 16px; color: #757575">分块</a> <a href="/tags/后缀树/" style="font-size: 16px; color: #757575">后缀树</a> <a href="/tags/后缀自动机/" style="font-size: 16px; color: #757575">后缀自动机</a> <a href="/tags/图论/" style="font-size: 35px; color: #212121">图论</a> <a href="/tags/并查集/" style="font-size: 16px; color: #757575">并查集</a> <a href="/tags/搜索/" style="font-size: 35px; color: #212121">搜索</a> <a href="/tags/数学/" style="font-size: 16px; color: #757575">数学</a> <a href="/tags/树分治/" style="font-size: 16px; color: #757575">树分治</a> <a href="/tags/游记/" style="font-size: 16px; color: #757575">游记</a> <a href="/tags/离线/" style="font-size: 16px; color: #757575">离线</a> <a href="/tags/线段树/" style="font-size: 16px; color: #757575">线段树</a> <a href="/tags/网络流/" style="font-size: 16px; color: #757575">网络流</a> <a href="/tags/贪心/" style="font-size: 35px; color: #212121">贪心</a>
+        <a href="/tags/AC自动机/" style="font-size: 16px; color: #757575">AC自动机</a> <a href="/tags/LCT/" style="font-size: 16px; color: #757575">LCT</a> <a href="/tags/二分/" style="font-size: 16px; color: #757575">二分</a> <a href="/tags/分块/" style="font-size: 16px; color: #757575">分块</a> <a href="/tags/后缀树/" style="font-size: 16px; color: #757575">后缀树</a> <a href="/tags/后缀自动机/" style="font-size: 16px; color: #757575">后缀自动机</a> <a href="/tags/图论/" style="font-size: 35px; color: #212121">图论</a> <a href="/tags/并查集/" style="font-size: 16px; color: #757575">并查集</a> <a href="/tags/搜索/" style="font-size: 35px; color: #212121">搜索</a> <a href="/tags/数学/" style="font-size: 16px; color: #757575">数学</a> <a href="/tags/树分治/" style="font-size: 16px; color: #757575">树分治</a> <a href="/tags/游记/" style="font-size: 35px; color: #212121">游记</a> <a href="/tags/离线/" style="font-size: 16px; color: #757575">离线</a> <a href="/tags/线段树/" style="font-size: 16px; color: #757575">线段树</a> <a href="/tags/网络流/" style="font-size: 16px; color: #757575">网络流</a> <a href="/tags/贪心/" style="font-size: 35px; color: #212121">贪心</a>
     </div>
 </div>
 
@@ -526,6 +528,91 @@
         <script>lsloader.load("sm_js","/js/smoothscroll.js?tNQK2Tw2SUL8a1Scn/Mgew==", true)</script>
     
 
+
+
+    <!-- Leancloud -->
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>
+        AV.initialize('XfyGPMoyJ693qLeYITT0R3QC-gzGzoHsz', 'WNSy9aWqRLtxrPOrLQNDhsfh');
+    </script>
+    <script type="text/ls-javascript" id="leancloud-views-script">
+    function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        $('.leancloud-views_num').each(function() {
+            var url = $(this).attr('id').trim();
+            query.equalTo('url', url);
+            query.find({
+                success: function(results) {
+                    if (results.length === 0) {
+                        var content = '0 ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                        return;
+                    }
+                    for (var i = 0; i < results.length; i++) {
+                        var object = results[i];
+                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    }
+                },
+                error: function(object, error) {
+                    console.log('Error: ' + error.code + ' ' + error.message);
+                }
+            });
+        });
+    }
+
+    function addCount(Counter) {
+      var Counter = AV.Object.extend('Counter');
+      url = $('.leancloud-views_num').attr('id').trim();
+      title = $('.leancloud-views_num').attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+      query.equalTo('url', url);
+      query.find({
+          success: function(results) {
+            if (results.length > 0) {
+                var counter = results[0];
+                counter.fetchWhenSave(true);
+                counter.increment('time');
+                counter.save(null, {
+                    success: function(counter) {
+                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+                        $(document.getElementById(url)).text(content);
+                    },
+                    error: function(counter, error) {
+                        console.log('Failed to save Visitor num, with error message: ' + error.message);
+                    }
+                });
+            } else {
+              var newcounter = new Counter();
+              newcounter.set('title', title);
+              newcounter.set('url', url);
+              newcounter.set('time', 1);
+              newcounter.save(null, {
+                  success: function(newcounter) {
+                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
+                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+                      $(document.getElementById(url)).text(content);
+                  },
+                  error: function(newcounter, error) {
+                      console.log('Failed to create');
+                  }
+              });
+            }
+        },
+        error: function(error) {
+            console.log('Error:' + error.code + ' ' + error.message);
+        }
+      });
+    }
+    $(function() {
+        var Counter = AV.Object.extend('Counter');
+        if ($('.leancloud-views_num').length === 1) {
+            addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+            showTime(Counter);
+        }
+    });
+</script>
 
 
 
